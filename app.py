@@ -121,7 +121,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Data Loading ---
-@st.cache_data
+@st.cache_data(ttl=3600, max_entries=2)
 def load_data():
     return pd.read_csv("./data/processed/dataset.csv")
 
